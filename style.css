@@ -1,0 +1,206 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+  color: white;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  padding: 40px 20px;
+  overflow-x: hidden;
+}
+
+.container {
+  max-width: 1000px;
+  width: 100%;
+  position: relative;
+  z-index: 2;
+}
+
+h1 {
+  font-size: 3rem;
+  margin-bottom: 10px;
+}
+
+.intro {
+  font-size: 1.3rem;
+  margin-bottom: 30px;
+}
+
+button {
+  background: white;
+  color: #ff4f81;
+  border: none;
+  padding: 15px 30px;
+  border-radius: 30px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  margin-top: 20px;
+  transition: transform 0.2s;
+}
+
+button:hover {
+  transform: scale(1.08);
+}
+
+.hidden {
+  display: none;
+}
+
+#surprise {
+  margin-top: 30px;
+  animation: fadeIn 1s ease-in-out;
+}
+
+.message {
+  font-size: 1.2rem;
+  line-height: 1.6;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+/* -------------------- */
+/* RANDOM PHOTO COLLAGE */
+/* -------------------- */
+
+.gallery {
+  position: relative;
+  width: 100%;
+  min-height: 700px;
+  margin-top: 50px;
+}
+
+.gallery img {
+  position: absolute;
+  width: 220px;
+  border-radius: 20px;
+  box-shadow: 0 12px 30px rgba(0,0,0,0.25);
+  opacity: 0;
+  animation: popIn 0.8s forwards;
+  transition: transform 0.3s;
+}
+
+.gallery img:hover {
+  transform: scale(1.08) rotate(0deg);
+  z-index: 10;
+}
+
+/* Photo positions */
+
+.gallery img:nth-child(1) {
+  top: 20px;
+  left: 5%;
+  transform: rotate(-8deg);
+  animation-delay: 0.2s;
+}
+
+.gallery img:nth-child(2) {
+  top: 70px;
+  left: 38%;
+  transform: rotate(6deg);
+  animation-delay: 0.4s;
+}
+
+.gallery img:nth-child(3) {
+  top: 20px;
+  right: 5%;
+  transform: rotate(-5deg);
+  animation-delay: 0.6s;
+}
+
+.gallery img:nth-child(4) {
+  top: 330px;
+  left: 12%;
+  transform: rotate(8deg);
+  animation-delay: 0.8s;
+}
+
+.gallery img:nth-child(5) {
+  top: 360px;
+  left: 42%;
+  transform: rotate(-6deg);
+  animation-delay: 1s;
+}
+
+.gallery img:nth-child(6) {
+  top: 300px;
+  right: 8%;
+  transform: rotate(7deg);
+  animation-delay: 1.2s;
+}
+
+/* -------------------- */
+/* LOVE LETTER */
+/* -------------------- */
+
+.letter {
+  margin-top: 60px;
+  background: rgba(255,255,255,0.25);
+  backdrop-filter: blur(10px);
+  padding: 30px;
+  border-radius: 25px;
+  font-size: 1.2rem;
+  line-height: 1.8;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* -------------------- */
+/* FLOATING HEARTS */
+/* -------------------- */
+
+.hearts::before {
+  content: "❤️ 💕 💖 💘 ❤️ 💕 💖 💘";
+  position: fixed;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  font-size: 30px;
+  animation: floatHearts 8s linear infinite;
+  opacity: 0.5;
+  pointer-events: none;
+  z-index: 1;
+}
+
+@keyframes floatHearts {
+  from {
+    transform: translateY(0);
+  }
+
+  to {
+    transform: translateY(-120vh);
+  }
+}
+
+/* -------------------- */
+/* ANIMATIONS */
+/* -------------------- */
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes popIn {
+  from {
+    opacity: 0;
+    transform: scale(0.5);
+  }
+
+  to {
+    opacity: 1;
+  }
+}
